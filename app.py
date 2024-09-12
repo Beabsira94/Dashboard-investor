@@ -2,12 +2,15 @@ import streamlit as st
 from multiapp import MultiApp
 from pages import overview_page, engagement_analysis_page, experience_analytics_page
 import pandas as pd
+import os
+import pandas as pd
 
 # Set page configuration
 st.set_page_config(page_title="Dashboard", page_icon="📊", layout="wide")
 
 # Load the dataset
-df = pd.read_csv('./.streamlit/data/engagement_experience_scores.csv')
+file_path = os.path.abspath('./.streamlit/data/engagement_experience_scores.csv')
+df = pd.read_csv(file_path)
 
 # Calculate Total Traffic (Bytes) as sum of 'Total UL (Bytes)' and 'Total DL (Bytes)'
 df['Total Traffic (Bytes)'] = df['Total UL (Bytes)'] + df['Total DL (Bytes)']
