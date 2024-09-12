@@ -9,8 +9,7 @@ import pandas as pd
 st.set_page_config(page_title="Dashboard", page_icon="📊", layout="wide")
 
 # Load the dataset
-file_path = os.path.abspath('./.streamlit/data/engagement_experience_scores.csv')
-df = pd.read_csv(file_path)
+df = pd.read_csv('engagement_experience_scores.csv')
 
 # Calculate Total Traffic (Bytes) as sum of 'Total UL (Bytes)' and 'Total DL (Bytes)'
 df['Total Traffic (Bytes)'] = df['Total UL (Bytes)'] + df['Total DL (Bytes)']
