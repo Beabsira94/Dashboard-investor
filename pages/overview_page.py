@@ -5,7 +5,7 @@ def app():
     st.title("Overview Analysis")
     
     # Load the dataset
-    df = pd.read_csv(r'C:\Users\Beab\Desktop\Kifiya AIM\Investor-feasibility-analysis\.streamlit\data\engagement_experience_scores.csv')
+    df = pd.read_csv('engagement_experience_scores.csv')
     df['Total Traffic (Bytes)'] = df['Total UL (Bytes)'] + df['Total DL (Bytes)']
     
     relevant_columns = ['MSISDN/Number', 'Engagement Score', 'Experience Score', 'Total Traffic (Bytes)']
